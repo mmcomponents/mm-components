@@ -1,26 +1,28 @@
-atalie-portman-6# mm-components
+# mm-components
 
-## Project setup
-```
-npm install
-```
+## Project motivation
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+The idea of this project is to provide in a semantic way some useful components that we use every day.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
+## Available Components
+ * [ ] Text input
+ * [ ] Multiline text input
+ * [ ] File input
+ * [ ] Radio button
+ * [ ] Checkbox
+ * [ ] Select Input
+ * [ ] Switch Input
+ * [ ] Datepicker
+ * [ ] Timepicker
+ * [ ] Container
+ * [ ] NavBar
+ * [ ] BreadCrumb
+ * [ ] Button
+ * [ ] Divider
+ * [ ] Loader
+ * [ ] Full Screen Loader
+ * [ ] System Messages
+ * [ ] Pagination
+ * [ ] Advertisement
+ * [ ] Image
+ * [ ] Video
