@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Components</h1>
+    <h6>Text Input</h6>
+    <div>
+      <mm-input name="name" label="Name" v-model="name" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import MmInput from './components/text-input/mm-input.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    MmInput,
+  },
+  data() {
+    return {
+      name: 'Meu nome é...',
+    };
   },
 };
 </script>

@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <label>
+  <div class="input-field">
+    <label :for="name">
       {{ label }}
+    </label>
+    <label>
       <input
+        :name="name"
+        :id="name"
         v-bind="$attrs"
         v-on="listeners">
     </label>
@@ -14,6 +18,10 @@
 export default {
   name: 'mm-input',
   props: {
+    name: {
+      type: String,
+      required: true,
+    },
     label: {
       type: String,
       required: true,
@@ -22,14 +30,30 @@ export default {
       type: String,
       default: null,
     },
+    enableValidation: {
+      type: Boolean,
+      default: true,
+    },
+    validatorFunction: {
+      type: Function,
+      default: null,
+    },
   },
   inheritAttrs: false,
+  mounted() {
+    console.log(this.$listeners);
+  },
   computed: {
     listeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit('input', event.target.value),
+        input: event => this.onInput(event),
       };
+    },
+  },
+  methods: {
+    onInput(event) {
+      this.$emit('input', event.target.value);
     },
   },
 };
