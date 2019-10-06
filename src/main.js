@@ -1,8 +1,5 @@
-import Vue from 'vue';
-import App from './App.vue';
+import MmButton from './components/button/mm-button.vue';
 
-Vue.config.productionTip = false;
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app');
+export default {
+  MmButton,
+};

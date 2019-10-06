@@ -20,8 +20,16 @@ module.exports = {
     'jest-serializer-vue',
   ],
   testMatch: [
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
+    '**/*.test.(js|jsx|ts|tsx)',
   ],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
   testURL: 'http://localhost/',
   watchPlugins: [
     'jest-watch-typeahead/filename',
