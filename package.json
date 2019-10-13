@@ -1,12 +1,14 @@
 {
-  "name": "@marcusmourao/mm-components",
+  "name": "mm-components",
   "version": "0.1.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "styleguide": "vue-styleguidist server",
+    "styleguide:build": "vue-styleguidist build"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -27,6 +29,7 @@
     "lint-staged": "^8.1.5",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-styleguidist": "^3.24.2",
     "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {

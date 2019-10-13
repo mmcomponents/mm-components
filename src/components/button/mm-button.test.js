@@ -1,13 +1,49 @@
 import { mount } from '@vue/test-utils';
 import MmButton from './mm-button.vue';
 
-function mountComponent() {
+function mountComponent(propsData) {
   return mount(MmButton, {
     slots: {
       default: 'My Button Text',
     },
+    propsData: {
+      ...propsData,
+    },
   });
 }
+
+test('should render a button with mm-button class', () => {
+  const wrapper = mountComponent();
+  const button = wrapper.find('button');
+  expect(button.classes()).toContain('mm-button');
+});
+
+test('should render unelevated button by default', () => {
+  const wrapper = mountComponent();
+  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--unelevated');
+  const button = wrapper.find('button');
+  expect(button.classes()).toContain('mm-button-theme--unelevated');
+});
+
+test('should render text button by default', () => {
+  const wrapper = mountComponent({
+    theme: 'text',
+  });
+  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--text');
+  const button = wrapper.find('button');
+  expect(button.classes()).toContain('mm-button-theme--text');
+});
+
+test('should render outlined button by default', () => {
+  const wrapper = mountComponent({
+    theme: 'outlined',
+  });
+  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--outlined');
+  const button = wrapper.find('button');
+  expect(button.classes()).toContain('mm-button-theme--outlined');
+});
+
+it('should render a themed button', () => {});
 
 test('should render a button with text content', () => {
   const wrapper = mountComponent();
@@ -22,14 +58,6 @@ test('should emit click event when button receive a click', () => {
   jest.spyOn(wrapper.vm, '$emit');
   button.vm.$el.dispatchEvent(new Event('click'));
   expect(wrapper.vm.$emit).toHaveBeenCalledWith('click');
-});
-
-test('should emit hover event when button receive a hover', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  jest.spyOn(wrapper.vm, '$emit');
-  button.vm.$el.dispatchEvent(new Event('hover'));
-  expect(wrapper.vm.$emit).toHaveBeenCalledWith('hover');
 });
 
 test('should emit blur event when button receive a blur', () => {

@@ -1,0 +1,82 @@
+$button-font-family: Roboto, sand-serif;
+$button-font-size--medium: 0.875rem;
+$button-line-height: 2.25rem;
+$button-font-height: 500;
+$button-padding: 0 8px 0 8px;
+$button-border-radius: 4px;
+$button-min-width: 64px;
+$button-height: 36px;
+$button-disabled-color: rgba(0, 0, 0, 0.37);
+$button-opacity-hover: 0.4;
+
+.mm-button {
+  font-family: $button-font-family;
+  font-size: $button-font-size--medium;
+  line-height: $button-line-height;
+  font-weight: $button-font-height;
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  min-width: $button-min-width;
+  height: $button-height;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.mm-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.mm-button:active {
+  outline: none;
+}
+.mm-button:hover {
+  cursor: pointer;
+  opacity: $button-opacity-hover;
+}
+.mm-button:disabled {
+  background-color: transparent;
+  color: $button-disabled-color;
+  cursor: default;
+  pointer-events: none;
+}
+.mm-button:not(:disabled) {
+  background-color: transparent;
+}
+
+
+// Outlined
+.mm-button-theme--outlined {
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+}
+
+.mm-button-theme--outlined:hover {
+  opacity: 0.75;
+}
+
+.mm-button-theme--outlined:disabled {
+  border-color: rgba(0, 0, 0, 0.37);
+}
+.mm-button-theme--outlined:not(:disabled) {
+  border-color: #6200ee;
+}
+
+// Unelevated
+.mm-button-theme--unelevated:not(:disabled) {
+  background-color: #6200ee;
+  border-color: #6200ee;
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+  color: #ffffff;
+}
+
+.mm-button-theme--unelevated:hover {
+  opacity: 0.75;
+}
