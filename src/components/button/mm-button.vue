@@ -12,6 +12,17 @@ export default {
   name: 'mm-button',
   props: {
     /**
+     * The color-theme for the button.
+     * Valid values are: success, standard, warning or danger,
+     */
+    colorTheme: {
+      type: String,
+      default: 'standard',
+      validator(colorTheme) {
+        return !!colorTheme || ['success', 'standard', 'warning', 'danger'].includes(colorTheme);
+      },
+    },
+    /**
      * The theme for the button.
      * Valid values are: text, outlined or unelevated,
      */
@@ -25,7 +36,10 @@ export default {
   },
   computed: {
     buttonClass() {
-      return `mm-button-theme--${this.theme}`;
+      return {
+        [`mm-button-theme--${this.theme}`]: true,
+        [`mm-button-color--${this.colorTheme}`]: true,
+      };
     },
     listeners() {
       return {

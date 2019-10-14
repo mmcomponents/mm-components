@@ -1,3 +1,5 @@
+@import "../../common/scss/colors";
+
 $button-font-family: Roboto, sand-serif;
 $button-font-size--medium: 0.875rem;
 $button-line-height: 2.25rem;
@@ -8,6 +10,8 @@ $button-min-width: 64px;
 $button-height: 36px;
 $button-disabled-color: rgba(0, 0, 0, 0.37);
 $button-opacity-hover: 0.4;
+$button-disabled-opacity: 0.4;
+$button-margin: 0 10px;
 
 .mm-button {
   font-family: $button-font-family;
@@ -26,6 +30,8 @@ $button-opacity-hover: 0.4;
   outline: none;
   overflow: hidden;
   vertical-align: middle;
+  margin: $button-margin;
+  background-color: transparent;
 }
 .mm-button::-moz-focus-inner {
   padding: 0;
@@ -39,44 +45,52 @@ $button-opacity-hover: 0.4;
   opacity: $button-opacity-hover;
 }
 .mm-button:disabled {
-  background-color: transparent;
-  color: $button-disabled-color;
+  opacity: $button-disabled-opacity;
   cursor: default;
   pointer-events: none;
 }
-.mm-button:not(:disabled) {
+
+.mm-button.mm-button-theme--outlined {
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+  &:hover {
+    opacity: 0.75;
+  }
+  &.mm-button-color--success {
+    border-color: $success-color-darken-2;
+  }
+  &.mm-button-color--warning {
+    border-color: $warning-color-darken-2;
+  }
+  &.mm-button-color--danger {
+    border-color: $danger-color-darken-2;
+  }
+}
+
+.mm-button.mm-button-theme--unelevated {
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+  &:hover {
+    opacity: 0.75;
+  }
+  &.mm-button-color--success {
+    background-color: $success-color-darken-2;
+    color: $white-color;
+  }
+  &.mm-button-color--warning {
+    background-color: $warning-color-darken-2;
+    color: $white-color;
+  }
+  &.mm-button-color--danger {
+    background-color: $danger-color-darken-2;
+    color: $white-color;
+  }
+}
+
+.mm-button.mm-button-color--standard:not(:disabled) {
   background-color: transparent;
-}
-
-
-// Outlined
-.mm-button-theme--outlined {
-  border-style: solid;
-  padding: 0 15px 0 15px;
-  border-width: 1px;
-}
-
-.mm-button-theme--outlined:hover {
-  opacity: 0.75;
-}
-
-.mm-button-theme--outlined:disabled {
-  border-color: rgba(0, 0, 0, 0.37);
-}
-.mm-button-theme--outlined:not(:disabled) {
-  border-color: #6200ee;
-}
-
-// Unelevated
-.mm-button-theme--unelevated:not(:disabled) {
-  background-color: #6200ee;
-  border-color: #6200ee;
-  border-style: solid;
-  padding: 0 15px 0 15px;
-  border-width: 1px;
-  color: #ffffff;
-}
-
-.mm-button-theme--unelevated:hover {
-  opacity: 0.75;
+  border-color: $black-color;
+  color: $black-color;
 }
