@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: npm test:unit
+      - run: npm test
 
   publish-npm:
     needs: build
@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@your-github-username'
+          scope: '@marcusmourao'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
