@@ -18,32 +18,36 @@ test('should render a button with mm-button class', () => {
   expect(button.classes()).toContain('mm-button');
 });
 
-test('should render unelevated button by default', () => {
+test('should render unelevated button with standard color by default', () => {
   const wrapper = mountComponent();
-  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--unelevated');
   const button = wrapper.find('button');
   expect(button.classes()).toContain('mm-button-theme--unelevated');
+  expect(button.classes()).toContain('mm-button-color--standard');
 });
 
-test('should render text button by default', () => {
+test('should render text button', () => {
   const wrapper = mountComponent({
     theme: 'text',
   });
-  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--text');
   const button = wrapper.find('button');
   expect(button.classes()).toContain('mm-button-theme--text');
 });
 
-test('should render outlined button by default', () => {
+test('should render outlined button', () => {
   const wrapper = mountComponent({
     theme: 'outlined',
   });
-  expect(wrapper.vm.buttonClass).toEqual('mm-button-theme--outlined');
   const button = wrapper.find('button');
   expect(button.classes()).toContain('mm-button-theme--outlined');
 });
 
-it('should render a themed button', () => {});
+it('should render color themed button', () => {
+  const wrapper = mountComponent({
+    colorTheme: 'success',
+  });
+  const button = wrapper.find('button');
+  expect(button.classes()).toContain('mm-button-color--success');
+});
 
 test('should render a button with text content', () => {
   const wrapper = mountComponent();
