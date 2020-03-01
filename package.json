@@ -11,8 +11,8 @@
     "styleguide:build": "vue-styleguidist build"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "core-js": "^2.6.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
