@@ -1,6 +1,6 @@
 {
   "name": "mm-components",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,8 +11,9 @@
     "styleguide:build": "vue-styleguidist build"
   },
   "dependencies": {
-    "vue": "^2.6.10",
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.5",
+    "material-design-icons": "^3.0.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
@@ -27,7 +28,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "sass-loader": "^7.1.0",
     "vue-styleguidist": "^3.24.2",
     "vue-template-compiler": "^2.6.10"

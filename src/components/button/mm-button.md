@@ -101,3 +101,16 @@ export default {
   </div>
 </template>
 ```
+
+```vue
+<template>
+  <div class="wrapper">
+    <mm-button icon="send">
+      Button with icon
+    </mm-button>
+    <mm-button icon="send" color-theme="success">
+      Button with icon
+    </mm-button>
+  </div>
+</template>
+```

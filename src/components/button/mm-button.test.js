@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import MmButton from './mm-button.vue';
+import MmIcon from '../icon/mm-icon.vue';
 
 function mountComponent(propsData) {
   return mount(MmButton, {
@@ -12,62 +13,72 @@ function mountComponent(propsData) {
   });
 }
 
-test('should render a button with mm-button class', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  expect(button.classes()).toContain('mm-button');
-});
-
-test('should render unelevated button with standard color by default', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  expect(button.classes()).toContain('mm-button-theme--unelevated');
-  expect(button.classes()).toContain('mm-button-color--standard');
-});
-
-test('should render text button', () => {
-  const wrapper = mountComponent({
-    theme: 'text',
+describe('mm-button', () => {
+  it('should render a button with mm-button class', () => {
+    const wrapper = mountComponent();
+    const button = wrapper.find('button');
+    expect(button.classes()).toContain('mm-button');
   });
-  const button = wrapper.find('button');
-  expect(button.classes()).toContain('mm-button-theme--text');
-});
 
-test('should render outlined button', () => {
-  const wrapper = mountComponent({
-    theme: 'outlined',
+  it('should render unelevated button with standard color by default', () => {
+    const wrapper = mountComponent();
+    const button = wrapper.find('button');
+    expect(button.classes()).toContain('mm-button-theme--unelevated');
+    expect(button.classes()).toContain('mm-button-color--standard');
   });
-  const button = wrapper.find('button');
-  expect(button.classes()).toContain('mm-button-theme--outlined');
-});
 
-it('should render color themed button', () => {
-  const wrapper = mountComponent({
-    colorTheme: 'success',
+  it('should render text button', () => {
+    const wrapper = mountComponent({
+      theme: 'text',
+    });
+    const button = wrapper.find('button');
+    expect(button.classes()).toContain('mm-button-theme--text');
   });
-  const button = wrapper.find('button');
-  expect(button.classes()).toContain('mm-button-color--success');
-});
 
-test('should render a button with text content', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  expect(button.exists()).toEqual(true);
-  expect(button.text()).toEqual('My Button Text');
-});
+  it('should render outlined button', () => {
+    const wrapper = mountComponent({
+      theme: 'outlined',
+    });
+    const button = wrapper.find('button');
+    expect(button.classes()).toContain('mm-button-theme--outlined');
+  });
 
-test('should emit click event when button receive a click', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  jest.spyOn(wrapper.vm, '$emit');
-  button.vm.$el.dispatchEvent(new Event('click'));
-  expect(wrapper.vm.$emit).toHaveBeenCalledWith('click');
-});
+  it('should render color themed button', () => {
+    const wrapper = mountComponent({
+      colorTheme: 'success',
+    });
+    const button = wrapper.find('button');
+    expect(button.classes()).toContain('mm-button-color--success');
+  });
 
-test('should emit blur event when button receive a blur', () => {
-  const wrapper = mountComponent();
-  const button = wrapper.find('button');
-  jest.spyOn(wrapper.vm, '$emit');
-  button.vm.$el.dispatchEvent(new Event('blur'));
-  expect(wrapper.vm.$emit).toHaveBeenCalledWith('blur');
+  it('should render a button with text content', () => {
+    const wrapper = mountComponent();
+    const button = wrapper.find('button');
+    expect(button.exists()).toEqual(true);
+    expect(button.text()).toEqual('My Button Text');
+  });
+
+  it('should emit click event when button receive a click', () => {
+    const wrapper = mountComponent();
+    const button = wrapper.find('button');
+    jest.spyOn(wrapper.vm, '$emit');
+    button.vm.$el.dispatchEvent(new Event('click'));
+    expect(wrapper.vm.$emit).toHaveBeenCalledWith('click');
+  });
+
+  it('should emit blur event when button receive a blur', () => {
+    const wrapper = mountComponent();
+    const button = wrapper.find('button');
+    jest.spyOn(wrapper.vm, '$emit');
+    button.vm.$el.dispatchEvent(new Event('blur'));
+    expect(wrapper.vm.$emit).toHaveBeenCalledWith('blur');
+  });
+
+  it('should render a button with icon', () => {
+    const wrapper = mountComponent({
+      icon: 'send',
+    });
+    const icon = wrapper.find(MmIcon);
+    expect(icon.props('icon')).toBe('send');
+  });
 });

@@ -3,14 +3,25 @@
     :class="buttonClass"
     class="mm-button"
     v-on="listeners">
+    <mm-icon v-if="icon" :icon="icon" />
     <slot></slot>
   </button>
 </template>
 
 <script>
+import MmIcon from '../icon/mm-icon.vue';
+
 export default {
   name: 'mm-button',
+  components: { MmIcon },
   props: {
+    /**
+     * Icon name for button.
+     */
+    icon: {
+      type: String,
+      default: null,
+    },
     /**
      * The color-theme for the button.
      * Valid values are: success, standard, warning or danger,
@@ -39,6 +50,7 @@ export default {
       return {
         [`mm-button-theme--${this.theme}`]: true,
         [`mm-button-color--${this.colorTheme}`]: true,
+        'mm-button__with-icon': this.icon,
       };
     },
     listeners() {
