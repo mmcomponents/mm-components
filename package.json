@@ -11,8 +11,9 @@
     "styleguide:build": "vue-styleguidist build"
   },
   "dependencies": {
-    "vue": "^2.6.10",
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.5",
+    "material-design-icons": "^3.0.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
