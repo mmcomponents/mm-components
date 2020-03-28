@@ -1,0 +1,15 @@
+.mm-input {
+  display: inline-block;
+  width: 100%;
+  label {
+    display: inline-block;
+  }
+  input {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    width: 100%;
+    outline: none;
+  }
+}
