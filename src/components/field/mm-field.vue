@@ -2,9 +2,11 @@
   <div class="mm-field" :class="classes">
     <label>{{ label }}</label>
     <slot></slot>
-    <span v-if="showInvalidFeedback" class="mm-field__error-message">
+    <div class="mm-field__error-message-container">
+      <span v-if="showInvalidFeedback" class="mm-field__error-message">
       {{ errorMessage }}
     </span>
+    </div>
   </div>
 </template>
 
@@ -20,11 +22,18 @@ export default {
   },
   provide() {
     return {
-      setErrorMessage: this.setErrorMessage,
-      setValidation: this.setValidation,
-      enableFeedbackValidation: this.enableFeedbackValidation,
-      isRequired: this.required,
+      fieldVm: {
+        setErrorMessage: this.setErrorMessage,
+        setValidation: this.setValidation,
+        enableFeedbackValidation: this.enableFeedbackValidation,
+        isRequired: this.required,
+      },
     };
+  },
+  inject: {
+    formVm: {
+      default: null,
+    },
   },
   data() {
     return {
@@ -43,6 +52,11 @@ export default {
         'mm-field--required': this.required,
       };
     },
+  },
+  created() {
+    if (this.formVm) {
+      this.formVm.registerField(this.$data);
+    }
   },
   methods: {
     setErrorMessage(message) {

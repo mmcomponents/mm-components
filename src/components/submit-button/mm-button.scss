@@ -1,0 +1,108 @@
+@import "../../common/scss/variables/colors";
+@import "../../common/scss/variables/fonts";
+
+$button-font-family: $font-family;
+$button-font-size--medium: 0.875rem;
+$button-line-height: 2.25rem;
+$button-font-height: 500;
+$button-padding: 0 8px 0 8px;
+$button-border-radius: 4px;
+$button-min-width: 64px;
+$button-height: 36px;
+$button-disabled-color: rgba(0, 0, 0, 0.37);
+$button-opacity-hover: 0.4;
+$button-disabled-opacity: 0.4;
+$button-margin: 0 10px;
+
+.mm-button {
+  font-family: $button-font-family;
+  font-size: $button-font-size--medium;
+  line-height: $button-line-height;
+  font-weight: $button-font-height;
+  padding: $button-padding;
+  border-radius: $button-border-radius;
+  min-width: $button-min-width;
+  height: $button-height;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: $button-margin;
+  background-color: transparent;
+}
+.mm-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.mm-button:active {
+  outline: none;
+}
+.mm-button:hover {
+  cursor: pointer;
+  opacity: $button-opacity-hover;
+}
+.mm-button:disabled {
+  opacity: $button-disabled-opacity;
+  cursor: default;
+  pointer-events: none;
+}
+
+.mm-button.mm-button-theme--outlined {
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+  &:hover {
+    opacity: 0.75;
+  }
+  &.mm-button-color--success {
+    border-color: $success-color-darken-2;
+  }
+  &.mm-button-color--warning {
+    border-color: $warning-color-darken-2;
+  }
+  &.mm-button-color--danger {
+    border-color: $danger-color-darken-2;
+  }
+}
+
+.mm-button.mm-button-theme--unelevated {
+  border-style: solid;
+  padding: 0 15px 0 15px;
+  border-width: 1px;
+  &:hover {
+    opacity: 0.75;
+  }
+  &.mm-button-color--success {
+    background-color: $success-color-darken-2;
+    color: $white-color;
+  }
+  &.mm-button-color--warning {
+    background-color: $warning-color-darken-2;
+    color: $white-color;
+  }
+  &.mm-button-color--danger {
+    background-color: $danger-color-darken-2;
+    color: $white-color;
+  }
+}
+
+.mm-button.mm-button-color--standard:not(:disabled) {
+  background-color: transparent;
+  border-color: $black-color;
+  color: $black-color;
+}
+
+.mm-button {
+  .mm-icon {
+    margin-right: 5px;
+  }
+}
+
+.mm-button__with-icon {
+  display: flex;
+  align-items: center;
+}

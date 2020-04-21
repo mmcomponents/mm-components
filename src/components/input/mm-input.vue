@@ -9,12 +9,11 @@
 <script>
 export default {
   name: 'mm-input',
-  inject: [
-    'isRequired',
-    'setErrorMessage',
-    'setValidation',
-    'enableFeedbackValidation',
-  ],
+  inject: {
+    fieldVm: {
+      default: null,
+    },
+  },
   props: {
     customValidations: {
       type: Array,
@@ -35,7 +34,7 @@ export default {
     },
     inputValidations() {
       const validations = [...this.customValidations];
-      if (this.isRequired) {
+      if (this.fieldVm && this.fieldVm.isRequired) {
         const requiredValidation = { validate: value => !!value, errorMessage: 'Este campo é obrigatório.' };
         validations.unshift(requiredValidation);
       }
@@ -54,11 +53,13 @@ export default {
     localValue: {
       immediate: true,
       handler() {
-        const isValid = this.isValueValid(this.localValue);
-        if (!isValid) {
-          this.setErrorMessage(this.getErrorMessage());
+        if (this.fieldVm) {
+          const isValid = this.isValueValid(this.localValue);
+          if (!isValid) {
+            this.fieldVm.setErrorMessage(this.getErrorMessage());
+          }
+          this.fieldVm.setValidation(isValid);
         }
-        this.setValidation(isValid);
       },
     },
   },
@@ -68,7 +69,9 @@ export default {
       this.$emit('input', event.target.value);
     },
     onBlur() {
-      this.enableFeedbackValidation();
+      if (this.fieldVm) {
+        this.fieldVm.enableFeedbackValidation();
+      }
     },
     isValueValid(value) {
       return this.inputValidations
