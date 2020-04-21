@@ -1,14 +1,21 @@
 <template>
-  <input
-    :value="value"
-    class="mm-input"
-    v-bind="$attrs"
-    v-on="listeners">
+  <div class="mm-radio-group">
+    <mm-radio-input
+      v-for="(option, index) in options"
+      :key="index"
+      :option="option"
+      :value="localValue"
+      @input="onInput"
+    />
+  </div>
 </template>
 
 <script>
+import MmRadioInput from '../radio-input/mm-radio-input.vue';
+
 export default {
-  name: 'mm-input',
+  name: 'mm-radio-group',
+  components: { MmRadioInput },
   inject: {
     fieldVm: {
       default: null,
@@ -19,37 +26,25 @@ export default {
       type: Array,
       default: () => [],
     },
-    value: {
-      type: String,
-      default: null,
+    required: {
+      type: Boolean,
+      default: true,
+    },
+    options: {
+      required: true,
     },
   },
   computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-        input: this.onInput,
-        blur: this.onBlur,
-      };
-    },
     inputValidations() {
       const validations = [...this.customValidations];
       if (this.fieldVm && this.fieldVm.isRequired) {
-        const requiredValidation = { validate: value => !!value, errorMessage: 'Este campo é obrigatório.' };
+        const requiredValidation = { validate: value => value !== null, errorMessage: 'Este campo é obrigatório.' };
         validations.unshift(requiredValidation);
       }
       return validations;
     },
   },
-  data() {
-    return {
-      localValue: this.value || null,
-    };
-  },
   watch: {
-    value() {
-      this.localValue = this.value;
-    },
     localValue: {
       immediate: true,
       handler() {
@@ -63,15 +58,15 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      localValue: null,
+    };
+  },
   methods: {
-    onInput(event) {
-      this.localValue = event.target.value;
-      this.$emit('input', event.target.value);
-    },
-    onBlur() {
-      if (this.fieldVm) {
-        this.fieldVm.enableFeedbackValidation();
-      }
+    onInput(value) {
+      this.localValue = value;
+      this.$emit('input', value);
     },
     isValueValid(value) {
       return this.inputValidations
@@ -89,5 +84,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./mm-input";
+@import "./mm-radio-group";
 </style>

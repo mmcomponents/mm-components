@@ -17,10 +17,13 @@ function mountComponent(props) {
     },
     provide() {
       return {
-        isRequired: false,
-        setErrorMessage: jest.fn(),
-        setValidation: jest.fn(),
-        enableFeedbackValidation: jest.fn(),
+        fieldVm: {
+          isRequired: false,
+          setErrorMessage: jest.fn(),
+          setValidation: jest.fn(),
+          enableFeedbackValidation: jest.fn(),
+        },
+        formVm: { registerField: jest.fn() },
       };
     },
   });
@@ -49,6 +52,11 @@ function mountTemplate(props) {
     components: {
       MmField,
       MmInput,
+    },
+    provide() {
+      return {
+        formVm: { registerField: jest.fn() },
+      };
     },
   },
   { attachToDocument: true });
