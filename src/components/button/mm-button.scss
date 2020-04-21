@@ -1,6 +1,7 @@
 @import "../../common/scss/variables/colors";
+@import "../../common/scss/variables/fonts";
 
-$button-font-family: Roboto, sand-serif;
+$button-font-family: $font-family;
 $button-font-size--medium: 0.875rem;
 $button-line-height: 2.25rem;
 $button-font-height: 500;

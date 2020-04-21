@@ -1,72 +1,82 @@
 <template>
-  <div
+  <input
+    :value="value"
     class="mm-input"
-    :class="classes">
-    <label>
-      {{ label }}
-    </label>
-    <input
-      :placeholder="placeholder"
-      v-bind="$attrs"
-      v-on="listeners">
-    <span v-if="errorMessage" class="mm-input__error-message">
-      {{ errorMessage }}
-    </span>
-  </div>
+    v-bind="$attrs"
+    v-on="listeners">
 </template>
 
 <script>
 export default {
   name: 'mm-input',
+  inject: [
+    'isRequired',
+    'setErrorMessage',
+    'setValidation',
+    'enableFeedbackValidation',
+  ],
   props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    placeholder: String,
     customValidations: {
       type: Array,
       default: () => [],
     },
-  },
-  inheritAttrs: false,
-  computed: {
-    classes() {
-      return {
-        'mm-input--valid': this.isValid,
-        'mm-input--invalid': !this.isValid,
-      };
+    value: {
+      type: String,
+      default: null,
     },
+  },
+  computed: {
     listeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit('input', event.target.value),
-        blur: event => this.onBlur(event),
+        input: this.onInput,
+        blur: this.onBlur,
       };
     },
-    isValid() {
-      return this.customValidations
-        .every(validationRule => validationRule.validate(this.$attrs.value));
-    },
-    errorMessage() {
-      if (this.isValid || !this.hasBeenBlurred) {
-        return null;
+    inputValidations() {
+      const validations = [...this.customValidations];
+      if (this.isRequired) {
+        const requiredValidation = { validate: value => !!value, errorMessage: 'Este campo é obrigatório.' };
+        validations.unshift(requiredValidation);
       }
-      return this.getErrorMessage();
+      return validations;
     },
   },
   data() {
     return {
-      hasBeenBlurred: false,
+      localValue: this.value || null,
     };
   },
+  watch: {
+    value() {
+      this.localValue = this.value;
+    },
+    localValue: {
+      immediate: true,
+      handler() {
+        const isValid = this.isValueValid(this.localValue);
+        if (!isValid) {
+          this.setErrorMessage(this.getErrorMessage());
+        }
+        this.setValidation(isValid);
+      },
+    },
+  },
   methods: {
+    onInput(event) {
+      this.localValue = event.target.value;
+      this.$emit('input', event.target.value);
+    },
     onBlur() {
-      this.hasBeenBlurred = true;
+      this.enableFeedbackValidation();
+    },
+    isValueValid(value) {
+      return this.inputValidations
+        .every(validationRule => validationRule.validate(value));
     },
     getErrorMessage() {
       try {
-        return this.customValidations[0].errorMessage;
+        return this.inputValidations[0].errorMessage;
       } catch (e) {
         return null;
       }

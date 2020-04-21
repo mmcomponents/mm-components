@@ -1,6 +1,11 @@
 {
   "name": "mm-components",
-  "version": "0.4.0",
+  "author": {
+    "email": "marcusmmourao@gmail.com",
+    "name": "Marcus Mourão",
+    "url": "https://github.com/marcusmourao"
+  },
+  "version": "0.5.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -41,5 +46,9 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "repository": {
+    "url": "https://github.com/marcusmourao/mm-components"
+  },
+  "license": "MIT"
 }
