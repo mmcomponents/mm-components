@@ -7,25 +7,23 @@
       </mm-col>
     </mm-row>
     <mm-row style="background-color: cadetblue">
-      <mm-col lg="6" style="background-color: #ffebee">
-        Column 6
-      </mm-col>
-      <mm-col lg="6" style="background-color: #ffebee">
-        Column 6
-      </mm-col>
-    </mm-row>
-    <mm-row style="background-color: cadetblue">
-      <mm-col lg="3" style="background-color: #ffebee">
-        Column 3
-      </mm-col>
-      <mm-col lg="3" style="background-color: #ffebee">
-        Column 3
+      <mm-col
+        xs="4"
+        sm="4"
+        md="4"
+        lg="6"
+        xl="6"
+        style="background-color: #ffebee">
+        Column middle
       </mm-col>
       <mm-col
-        offset-lg="3"
-        lg="3"
+        xs="4"
+        sm="4"
+        md="4"
+        lg="6"
+        xl="6"
         style="background-color: #ffebee">
-        Column 3
+        Column middle
       </mm-col>
     </mm-row>
   </div>

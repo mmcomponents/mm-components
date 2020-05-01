@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "mm-field.scss";
+@import "mm-field";
 </style>

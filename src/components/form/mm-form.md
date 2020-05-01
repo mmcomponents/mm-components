@@ -3,12 +3,12 @@
   <div class="wrapper">
     <mm-form :on-submit="onSubmit">
       <mm-row>
-        <mm-col lg="6">
+        <mm-col xs="4" sm="4" md="4" lg="6" xl="6">
           <mm-field label="First Name" required>
             <mm-input v-model="firstName" />
           </mm-field>
         </mm-col>
-        <mm-col lg="6">
+        <mm-col xs="4" sm="4" md="4" lg="6" xl="6">
           <mm-field label="First Name" required>
             <mm-input v-model="lastName" />
           </mm-field>

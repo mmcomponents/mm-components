@@ -5,15 +5,15 @@ export default {
   props: {
     xs: {
       type: [String, Number],
-      default: 12,
+      default: 4,
     },
     sm: {
       type: [String, Number],
-      default: 12,
+      default: 4,
     },
     md: {
       type: [String, Number],
-      default: 12,
+      default: 8,
     },
     lg: {
       type: [String, Number],
@@ -66,32 +66,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$column-gap: 100% / 12;
-
-.mm-col {
-  display: flex;
-  :not(:first-child),
-  :not(:last-child) {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  @for $i from 1 through 12 {
-    &.mm-col--xs-#{$i},
-    &.mm-col--sm-#{$i},
-    &.mm-col--md-#{$i},
-    &.mm-col--lg-#{$i},
-    &.mm-col--xl-#{$i} {
-      width: $column-gap * $i;
-    }
-
-    &.mm-col--offset-xs-#{$i},
-    &.mm-col--offset-sm-#{$i},
-    &.mm-col--offset-md-#{$i},
-    &.mm-col--offset-lg-#{$i},
-    &.mm-col--offset-xl-#{$i} {
-      margin-left: $column-gap * $i;
-    }
-  }
-}
+@import "mm-column";
 </style>

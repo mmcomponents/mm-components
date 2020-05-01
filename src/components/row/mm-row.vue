@@ -14,5 +14,6 @@ export default {
 <style scoped>
 .mm-row {
   display: flex;
+  flex-wrap: wrap;
 }
 </style>
