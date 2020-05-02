@@ -5,7 +5,7 @@
     "name": "Marcus Mourão",
     "url": "https://github.com/marcusmourao"
   },
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "lodash": "^4.17.15",
     "material-design-icons": "^3.0.1",
+    "uuid": "^8.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

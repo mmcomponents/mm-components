@@ -1,0 +1,11 @@
+.mm-radio-group {
+  display: flex;
+}
+
+.mm-radio-group--horizontal {
+  flex-direction: row;
+}
+
+.mm-radio-group--vertical {
+  flex-direction: column;
+}
