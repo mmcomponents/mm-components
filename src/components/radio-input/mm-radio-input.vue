@@ -10,7 +10,7 @@ export default {
   name: 'mm-radio-input',
   props: {
     value: {
-      type: [String, Number, Object, Array],
+      type: [String, Number, Object, Array, Boolean],
       default: null,
     },
     option: {

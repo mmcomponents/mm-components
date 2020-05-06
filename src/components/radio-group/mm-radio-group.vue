@@ -72,6 +72,13 @@ export default {
       return this.inputValidations
         .every(validationRule => validationRule.validate(value));
     },
+    getErrorMessage() {
+      try {
+        return this.inputValidations[0].errorMessage;
+      } catch (e) {
+        return null;
+      }
+    },
   },
 };
 </script>
