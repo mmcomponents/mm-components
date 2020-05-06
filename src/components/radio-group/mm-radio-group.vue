@@ -38,7 +38,7 @@ export default {
     inputValidations() {
       const validations = [...this.customValidations];
       if (this.fieldVm && this.fieldVm.isRequired) {
-        const requiredValidation = { validate: value => !!value, errorMessage: 'Este campo é obrigatório.' };
+        const requiredValidation = { validate: value => value !== null, errorMessage: 'Este campo é obrigatório.' };
         validations.unshift(requiredValidation);
       }
       return validations;
@@ -67,6 +67,10 @@ export default {
     onInput(value) {
       this.localValue = value;
       this.$emit('input', value);
+    },
+    isValueValid(value) {
+      return this.inputValidations
+        .every(validationRule => validationRule.validate(value));
     },
   },
 };
