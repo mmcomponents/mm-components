@@ -1,0 +1,127 @@
+<template>
+  <div class="mm-loader" :class="classes">
+    <svg class="mm-loader__circle" viewBox="25 25 50 50">
+      <circle
+        class="mm-loader__circle-path"
+        cx="50"
+        cy="50"
+        r="20"
+        fill="none"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-miterlimit="10"/>
+    </svg>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'mm-loader',
+  props: {
+    size: {
+      type: String,
+      default: 'medium',
+      validator(size) {
+        return ['small', 'medium', 'large'].includes(size);
+      },
+    },
+  },
+  computed: {
+    classes() {
+      return {
+        [`mm-loader--${this.size}`]: this.size,
+      };
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+  .mm-loader {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .mm-loader--small {
+    width: 20px;
+  }
+  .mm-loader--medium {
+    width: 40px;
+  }
+  .mm-loader--large {
+    width: 80px;
+  }
+
+
+  .mm-loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  .mm-loader__circle {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .mm-loader__circle-path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+
+  @-webkit-keyframes rotate {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+
+</style>
