@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import MmField from './mm-field.vue';
+import MmField from '.';
 
 const getLabelMock = () => 'First Name';
 const registerFieldMock = jest.fn();
@@ -25,10 +25,11 @@ describe('mm-field', () => {
     registerFieldMock.mockClear();
   });
 
-  it('should register field after mount', () => {
+  it('should register field on create', () => {
     const wrapper = mountComponent();
+    const field = wrapper.find(MmField);
     expect(registerFieldMock).toHaveBeenCalledTimes(1);
-    expect(registerFieldMock).toHaveBeenCalledWith(wrapper.vm);
+    expect(registerFieldMock).toHaveBeenCalledWith(field.vm.$data);
   });
 
   it('should render component with expected css classes', () => {

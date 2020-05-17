@@ -5,7 +5,7 @@
     "name": "Marcus Mourão",
     "url": "https://github.com/marcusmourao"
   },
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "dist/mm-components.umd.min.js",
   "files": [
     "dist"
@@ -22,7 +22,9 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
-    "uuid": "^8.0.0"
+    "uuid": "^8.0.0",
+    "material-design-icons": "^3.0.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -45,10 +47,6 @@
     "sass-loader": "^7.1.0",
     "vue-styleguidist": "^3.24.2",
     "vue-template-compiler": "^2.6.10"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.10",
-    "material-design-icons": "^3.0.1"
   },
   "husky": {
     "hooks": {

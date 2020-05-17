@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
-import MmButton from './mm-button.vue';
-import MmIcon from '../icon/mm-icon.vue';
+import MmIcon from '../icon';
+import MmButton from '.';
 
 function mountComponent(propsData) {
   return mount(MmButton, {

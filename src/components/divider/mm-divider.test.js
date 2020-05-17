@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import MmDivider from './mm-divider.vue';
+import MmDivider from '.';
 
 function mountComponent(props) {
   return mount(MmDivider, {

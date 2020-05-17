@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import MmIcon from './mm-icon.vue';
+import MmIcon from '.';
 
 function mountComponent(props) {
   return mount(MmIcon, {
