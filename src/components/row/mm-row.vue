@@ -12,8 +12,5 @@ export default {
 </script>
 
 <style scoped>
-.mm-row {
-  display: flex;
-  flex-wrap: wrap;
-}
+@import "./mm-row.scss";
 </style>

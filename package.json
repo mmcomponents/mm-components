@@ -22,7 +22,9 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
-    "uuid": "^8.0.0",
+    "uuid": "^8.0.0"
+  },
+  "peerDependencies": {
     "material-design-icons": "^3.0.1",
     "vue": "^2.6.10"
   },
@@ -46,7 +48,9 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "vue-styleguidist": "^3.24.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "material-design-icons": "^3.0.1",
+    "vue": "^2.6.10"
   },
   "husky": {
     "hooks": {

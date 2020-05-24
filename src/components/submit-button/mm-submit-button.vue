@@ -31,7 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .mm-submit-button {
-    width: 100%;
-  }
+@import "./mm-submit-button.scss";
 </style>

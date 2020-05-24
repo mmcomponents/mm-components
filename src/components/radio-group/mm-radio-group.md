@@ -8,7 +8,7 @@
 
 <script>
 import MmRadioGroup from "./mm-radio-group"; 
-import MmRadioInput from '../radio-input/mm-radio-input.vue';
+import MmRadioInput from './mm-radio-input.vue';
 
 export default {
   components: {
@@ -46,7 +46,7 @@ import MmRadioGroup from "./mm-radio-group";
 import MmForm from "../form/mm-form"; 
 import MmField from "../field/mm-field"; 
 import MmSubmitButton from "../submit-button/mm-submit-button"; 
-import MmRadioInput from '../radio-input/mm-radio-input.vue';
+import MmRadioInput from './mm-radio-input.vue';
 
 export default {
   components: { MmField ,

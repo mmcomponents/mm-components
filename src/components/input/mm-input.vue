@@ -78,11 +78,7 @@ export default {
         .every(validationRule => validationRule.validate(value));
     },
     getErrorMessage() {
-      try {
-        return this.inputValidations[0].errorMessage;
-      } catch (e) {
-        return null;
-      }
+      return this.inputValidations[0].errorMessage;
     },
   },
 };

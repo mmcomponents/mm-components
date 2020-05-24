@@ -79,6 +79,6 @@ describe('mm-button', () => {
       icon: 'send',
     });
     const icon = wrapper.find(MmIcon);
-    expect(icon.props('icon')).toBe('send');
+    expect(icon.text()).toBe('send');
   });
 });
