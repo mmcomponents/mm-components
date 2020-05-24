@@ -7,16 +7,16 @@ The idea of this project is to provide in a semantic way some useful components 
 ## Backlog
 
 ### Grid
-- [ ] Row
-- [ ] Column
+- [x] Row
+- [x] Column
 - [ ] Flexbox
 - [ ] Flex Child
 - [ ] Divider
 - [ ] Container
 
 ### Form
-- [ ] Form
-- [ ] Text Input
+- [x] Form
+- [x] Text Input
 - [ ] Password Input
 - [ ] Email Input
 - [ ] Phone Input
@@ -25,23 +25,23 @@ The idea of this project is to provide in a semantic way some useful components 
 - [ ] Date Input
 - [ ] Time Input
 - [ ] Checkboxes
-- [ ] Radio Input
+- [x] Radio Input
 - [ ] Select
 - [ ] Autocomplete
 - [ ] Textarea
-- [ ] Field
+- [x] Field
 - [ ] Label
 
 ### Buttons
-- [ ] Button
-- [ ] Submit Button
-- [ ] Request Button
+- [x] Button
+- [x] Submit Button
+- ~~[ ] Request Button~~
 - [ ] Toggle Button
 - [ ] Floating Button
 
 ### Progress indicators
 - [ ] Progress Bar
-- [ ] Loader
+- [x] Loader
 - [ ] Full Screen Loader
 
 ### File Upload

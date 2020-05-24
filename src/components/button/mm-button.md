@@ -1,17 +1,23 @@
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button @click="onClick()" @blur="onBlur()">
-      Click me unelevated
-    </mm-button>
-    <mm-button disabled @click="onClick()" @blur="onBlur()">
-      Click me unelevated disabled
-    </mm-button>
+    <mm-row>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button @click="onClick()" @blur="onBlur()">
+          Click me unelevated
+        </mm-button>
+      </mm-col>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button disabled @click="onClick()" @blur="onBlur()">
+          Click me unelevated disabled
+        </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 
 <script>
-export default {
+export default { 
   methods: {
     onClick() { console.log('click'); },
     onBlur() { console.log('blur'); },
@@ -23,12 +29,18 @@ export default {
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button theme="text">
-      Text button
-    </mm-button>
-    <mm-button theme="text" disabled>
-      Text disabled
-    </mm-button>
+    <mm-row>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button theme="text">
+          Text button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button theme="text" disabled>
+          Text disabled
+        </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 ```
@@ -36,12 +48,18 @@ export default {
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button theme="outlined">
-      Outlined button
-    </mm-button>
-    <mm-button theme="outlined" disabled>
-      Outlined disabled
-    </mm-button>
+    <mm-row>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button theme="outlined">
+          Outlined button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button theme="outlined" disabled>
+           Outlined disabled
+         </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 ```
@@ -49,27 +67,40 @@ export default {
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button theme="outlined" color-theme="success">
-      Outlined success button
-    </mm-button>
-    <mm-button theme="outlined" color-theme="success" disabled>
-      Outlined success disabled
-    </mm-button>
-    <br>
-    <mm-button theme="outlined" color-theme="warning">
-      Outlined warning button
-    </mm-button>
-    <mm-button theme="outlined" color-theme="warning" disabled>
-      Outlined warning disabled
-    </mm-button>
-    <br>
-    <mm-button theme="outlined" color-theme="danger">
-      Outlined danger button
-    </mm-button>
-    <mm-button theme="outlined" color-theme="danger" disabled>
-      Outlined danger disabled
-    </mm-button>
-    <br>
+    <mm-row>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="success">
+          Outlined success button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="warning">
+          Outlined warning button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="danger">
+          Outlined danger button
+        </mm-button>
+      </mm-col>
+    </mm-row>
+    <mm-row>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="success" disabled>
+          Outlined success button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="warning" disabled>
+         Outlined warning button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button theme="outlined" color-theme="danger" disabled>
+          Outlined danger button
+        </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 ```
@@ -77,27 +108,40 @@ export default {
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button color-theme="success">
-      Unelevated success button
-    </mm-button>
-    <mm-button color-theme="success" disabled>
-      Unelevated success disabled
-    </mm-button>
-    <br>
-    <mm-button color-theme="warning">
-      Unelevated warning button
-    </mm-button>
-    <mm-button color-theme="warning" disabled>
-      Unelevated warning disabled
-    </mm-button>
-    <br>
-    <mm-button color-theme="danger">
-      Unelevated danger button
-    </mm-button>
-    <mm-button color-theme="danger" disabled>
-      Unelevated danger disabled
-    </mm-button>
-    <br>
+    <mm-row>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="success">
+          Outlined success button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="warning">
+          Outlined warning button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="danger">
+          Outlined danger button
+        </mm-button>
+      </mm-col>
+    </mm-row>
+    <mm-row>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="success" disabled>
+          Outlined success button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="warning" disabled>
+         Outlined warning button
+        </mm-button>
+      </mm-col>
+      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+        <mm-button color-theme="danger" disabled>
+          Outlined danger button
+        </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 ```
@@ -105,12 +149,18 @@ export default {
 ```vue
 <template>
   <div class="wrapper">
-    <mm-button icon="send">
-      Button with icon
-    </mm-button>
-    <mm-button icon="send" color-theme="success">
-      Button with icon
-    </mm-button>
+    <mm-row>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button icon="send">
+          Button with icon
+        </mm-button>
+      </mm-col>
+      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+        <mm-button icon="send" color-theme="success">
+          Button with icon
+        </mm-button>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 ```

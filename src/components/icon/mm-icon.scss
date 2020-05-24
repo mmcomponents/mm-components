@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '../../common/scss/variables/tokens';
 
 .mm-icon {
   font-size: 1rem;
+}
+
+.mm-button__with-icon .mm-icon {
+  margin-right: $margin-token;
 }

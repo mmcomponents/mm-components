@@ -2,6 +2,7 @@
   <button
     :class="buttonClass"
     class="mm-button"
+    type="button"
     v-on="listeners">
     <mm-icon v-if="icon" :icon="icon" />
     <slot></slot>
