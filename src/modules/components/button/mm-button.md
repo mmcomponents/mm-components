@@ -68,34 +68,34 @@ export default {
 <template>
   <div class="wrapper">
     <mm-row>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="4" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="success">
           Outlined success button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="warning">
           Outlined warning button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="danger">
           Outlined danger button
         </mm-button>
       </mm-col>
     </mm-row>
     <mm-row>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="4" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="success" disabled>
           Outlined success button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="warning" disabled>
          Outlined warning button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button theme="outlined" color-theme="danger" disabled>
           Outlined danger button
         </mm-button>
@@ -109,34 +109,34 @@ export default {
 <template>
   <div class="wrapper">
     <mm-row>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="4" lg="4" xl="4">
         <mm-button color-theme="success">
           Outlined success button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button color-theme="warning">
           Outlined warning button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button color-theme="danger">
           Outlined danger button
         </mm-button>
       </mm-col>
     </mm-row>
     <mm-row>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="4" lg="4" xl="4">
         <mm-button color-theme="success" disabled>
           Outlined success button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button color-theme="warning" disabled>
          Outlined warning button
         </mm-button>
       </mm-col>
-      <mm-col xs="1" sm="1" md="2" lg="4" xl="4">
+      <mm-col xs="4" sm="4" md="2" lg="4" xl="4">
         <mm-button color-theme="danger" disabled>
           Outlined danger button
         </mm-button>
@@ -150,12 +150,12 @@ export default {
 <template>
   <div class="wrapper">
     <mm-row>
-      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+      <mm-col xs="4" sm="4" md="4" lg="6" xl="6">
         <mm-button icon="send">
           Button with icon
         </mm-button>
       </mm-col>
-      <mm-col xs="2" sm="2" md="4" lg="6" xl="6">
+      <mm-col xs="4" sm="4" md="4" lg="6" xl="6">
         <mm-button icon="send" color-theme="success">
           Button with icon
         </mm-button>

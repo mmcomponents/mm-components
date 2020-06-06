@@ -6,14 +6,4 @@
     </mm-row>
   </div>
 </template>
-
-<script>
-import MmCol from '../column/mm-column.vue';
-
-export default {
-  components: {
-    MmCol,
-  },
-};
-</script>
 ```

@@ -1,19 +1,22 @@
-import MmRow from './components/row/mm-row.vue';
-import MmCol from './components/column/mm-column.vue';
-import MmForm from './components/form/mm-form.vue';
-import MmButton from './components/button/mm-button.vue';
-import MmDivider from './components/divider/mm-divider.vue';
-import MmField from './components/field/mm-field.vue';
-import MmIcon from './components/icon/mm-icon.vue';
-import MmInput from './components/input/mm-input.vue';
+const { lstatSync, readdirSync } = require('fs');
+const { join } = require('path');
+
+const isDirectory = source => lstatSync(source).isDirectory();
+const getDirectories = source => readdirSync(source)
+  .map(name => join(source, name)).filter(isDirectory);
+
+const BASE_DIR = join(__dirname, 'modules/components');
+
+const componentsDirectories = getDirectories(BASE_DIR);
+
+const components = {};
+
+componentsDirectories.forEach((directory) => {
+  // eslint-disable-next-line
+  const component = require(directory);
+  components[component.name] = component;
+});
 
 export default {
-  MmButton,
-  MmCol,
-  MmDivider,
-  MmField,
-  MmForm,
-  MmIcon,
-  MmInput,
-  MmRow,
+  ...components,
 };
