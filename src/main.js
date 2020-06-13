@@ -1,6 +1,7 @@
 import MmButton from './modules/components/button';
 import MmColumn from './modules/components/column';
 import MmDivider from './modules/components/divider';
+import MmFetchContent from './modules/components/fetch-content';
 import MmField from './modules/components/field';
 import MmForm from './modules/components/form';
 import MmIcon from './modules/components/icon';
@@ -14,6 +15,7 @@ export default {
   MmButton,
   MmColumn,
   MmDivider,
+  MmFetchContent,
   MmField,
   MmForm,
   MmIcon,

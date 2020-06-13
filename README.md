@@ -13,7 +13,7 @@ The idea of this project is to provide in a semantic way some useful components 
 - [x] Column
 - [ ] Flexbox
 - [ ] Flex Child
-- [ ] Divider
+- [x] Divider
 - [ ] Container
 
 ### Form
@@ -105,4 +105,4 @@ The idea of this project is to provide in a semantic way some useful components 
 - [ ] Dropdown
 - [ ] Empty state
 - [ ] Quote
-- [ ] Fetch Content
+- [x] Fetch Content
