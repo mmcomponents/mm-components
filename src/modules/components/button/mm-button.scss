@@ -10,7 +10,8 @@ $button-border-radius: 4px;
 $button-min-width: 64px;
 $button-height: 36px;
 $button-disabled-color: rgba(0, 0, 0, 0.37);
-$button-opacity-hover: 0.4;
+$button-opacity-hover: 0.6;
+$button-opacity-active: 0.9;
 $button-disabled-opacity: 0.4;
 $button-margin: 0 10px;
 
@@ -38,8 +39,9 @@ $button-margin: 0 10px;
   padding: 0;
   border: 0;
 }
-.mm-button:active {
+.mm-button:active, .mm-button:target, .mm-button:focus {
   outline: none;
+  opacity: $button-opacity-active;
 }
 .mm-button:hover {
   cursor: pointer;
