@@ -5,7 +5,7 @@
     "name": "Marcus Mourão",
     "url": "https://github.com/marcusmourao"
   },
-  "version": "0.6.3",
+  "version": "0.6.4",
   "main": "dist/mm-components.umd.min.js",
   "files": [
     "dist"
@@ -17,7 +17,8 @@
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
     "styleguide": "vue-styleguidist server",
-    "styleguide:build": "vue-styleguidist build"
+    "styleguide:build": "vue-styleguidist build",
+    "release": "standard-version"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -50,6 +51,7 @@
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "sass-loader": "^7.1.0",
+    "standard-version": "^8.0.0",
     "vue": "^2.6.10",
     "vue-styleguidist": "^3.24.2",
     "vue-template-compiler": "^2.6.10"

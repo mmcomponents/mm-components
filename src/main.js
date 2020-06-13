@@ -1,22 +1,25 @@
-const { lstatSync, readdirSync } = require('fs');
-const { join } = require('path');
-
-const isDirectory = source => lstatSync(source).isDirectory();
-const getDirectories = source => readdirSync(source)
-  .map(name => join(source, name)).filter(isDirectory);
-
-const BASE_DIR = join(__dirname, 'modules/components');
-
-const componentsDirectories = getDirectories(BASE_DIR);
-
-const components = {};
-
-componentsDirectories.forEach((directory) => {
-  // eslint-disable-next-line
-  const component = require(directory);
-  components[component.name] = component;
-});
+import MmButton from './modules/components/button';
+import MmColumn from './modules/components/column';
+import MmDivider from './modules/components/divider';
+import MmField from './modules/components/field';
+import MmForm from './modules/components/form';
+import MmIcon from './modules/components/icon';
+import MmInput from './modules/components/input';
+import MmLoader from './modules/components/loader';
+import MmRadioGroup from './modules/components/radio-group';
+import MmRow from './modules/components/row';
+import MmSubmitButton from './modules/components/submit-button';
 
 export default {
-  ...components,
+  MmButton,
+  MmColumn,
+  MmDivider,
+  MmField,
+  MmForm,
+  MmIcon,
+  MmInput,
+  MmLoader,
+  MmRadioGroup,
+  MmRow,
+  MmSubmitButton,
 };
