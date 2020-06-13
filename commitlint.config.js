@@ -11,6 +11,7 @@ module.exports = {
         'chore',
         'feat',
         'fix',
+        'release',
       ],
     ],
   },

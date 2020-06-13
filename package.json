@@ -18,7 +18,7 @@
     "test": "vue-cli-service test:unit",
     "styleguide": "vue-styleguidist server",
     "styleguide:build": "vue-styleguidist build",
-    "release": "standard-version"
+    "release": "release-it"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -50,8 +50,8 @@
     "material-design-icons": "^3.0.1",
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
+    "release-it": "^13.6.3",
     "sass-loader": "^7.1.0",
-    "standard-version": "^8.0.0",
     "vue": "^2.6.10",
     "vue-styleguidist": "^3.24.2",
     "vue-template-compiler": "^2.6.10"
