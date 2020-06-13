@@ -11,11 +11,14 @@
   display: flex;
   width: 100%;
   outline: none;
+  &:active,&:focus,&:target {
+    caret-color: $input-focus-color;
+    border-color: $input-focus-color;
+  }
 }
 
 .mm-field--invalid {
   .mm-input {
-    color: $danger-color-darken-2;
     border-color: $danger-color-darken-2;
   }
 }
