@@ -98,7 +98,7 @@ The idea of this project is to provide in a semantic way some useful components 
 ### Others
 - [ ] Drop Zone
 - [ ] Badge
-- [ ] Icon
+- [x] Icon
 - [ ] Card
 - [ ] Tooltip
 - [ ] Card
