@@ -7,7 +7,6 @@ import MmForm from './modules/components/form';
 import MmIcon from './modules/components/icon';
 import MmInput from './modules/components/input';
 import MmLoader from './modules/components/loader';
-import MmRadioGroup from './modules/components/radio-group';
 import MmRow from './modules/components/row';
 import MmSubmitButton from './modules/components/submit-button';
 
@@ -21,7 +20,6 @@ export default {
   MmIcon,
   MmInput,
   MmLoader,
-  MmRadioGroup,
   MmRow,
   MmSubmitButton,
 };
