@@ -1,6 +1,6 @@
-@import "../../core/styles/variables/colors.scss";
-@import "../../core/styles/variables/tokens.scss";
-@import "../../core/styles/variables/fonts.scss";
+@import "@core/styles/variables/colors.scss";
+@import "@core/styles/variables/tokens.scss";
+@import "@core/styles/variables/fonts.scss";
 
 .mm-input {
   font-family: $font-family;
@@ -12,8 +12,8 @@
   width: 100%;
   outline: none;
   &:active,&:focus,&:target {
-    caret-color: $input-focus-color;
-    border-color: $input-focus-color;
+    caret-color: rgba(128, 128, 128, 0.7);
+    border-color: rgba(128, 128, 128, 0.7);
   }
 }
 
