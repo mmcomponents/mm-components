@@ -5,7 +5,7 @@ import {
   destroyPopover,
 } from '../../core/services/popoverService/popoverService';
 
-jest.mock('./popoverService', () => ({
+jest.mock('../../core/services/popoverService/popoverService', () => ({
   createPopover: jest.fn().mockReturnValue('mock popover instance'),
   destroyPopover: jest.fn(),
 }));
