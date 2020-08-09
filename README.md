@@ -11,8 +11,8 @@ The idea of this project is to provide in a semantic way some useful components 
 ### Grid
 - [x] Row
 - [x] Column
-- [ ] Flexbox
-- [ ] Flex Child
+~~[ ] Flexbox~~
+~~[ ] Flex Child~~
 - [x] Divider
 - [ ] Container
 

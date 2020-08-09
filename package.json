@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "flatpickr": "^4.6.3",
+    "popper.js": "^1.16.0",
     "uuid": "^8.0.0"
   },
   "peerDependencies": {
