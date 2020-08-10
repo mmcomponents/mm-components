@@ -11,8 +11,6 @@ The idea of this project is to provide in a semantic way some useful components 
 ### Grid
 - [x] Row
 - [x] Column
-- [ ] Flexbox
-- [ ] Flex Child
 - [x] Divider
 - [ ] Container
 
@@ -37,9 +35,6 @@ The idea of this project is to provide in a semantic way some useful components 
 ### Buttons
 - [x] Button
 - [x] Submit Button
-- ~~[ ] Request Button~~
-- [ ] Toggle Button
-- [ ] Floating Button
 
 ### Progress indicators
 - [ ] Progress Bar
@@ -101,7 +96,6 @@ The idea of this project is to provide in a semantic way some useful components 
 - [x] Icon
 - [ ] Card
 - [ ] Tooltip
-- [ ] Card
 - [ ] Dropdown
 - [ ] Empty state
 - [ ] Quote
