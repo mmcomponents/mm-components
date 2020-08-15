@@ -10,9 +10,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/"
-  },
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
