@@ -22,19 +22,21 @@ The idea of this project is to provide in a semantic way some useful components 
 - [ ] Phone Input
 - [ ] Number Input
 - [ ] Currency Input
-- [ ] Date Input
+- [x] Date Input
 - [ ] Time Input
 - [ ] Checkboxes
-- [x] Radio Input
+- [ ] Radio Input
 - [ ] Select
 - [ ] Autocomplete
 - [ ] Textarea
 - [x] Field
-- [ ] Label
+- [x] Label
 
 ### Buttons
 - [x] Button
 - [x] Submit Button
+- [ ] Toggle Button
+- [ ] Floating Button
 
 ### Progress indicators
 - [ ] Progress Bar
@@ -48,7 +50,7 @@ The idea of this project is to provide in a semantic way some useful components 
 - [ ] File Upload Multiple
 
 ### Pickers
-- [ ] Date Picker
+- [x] Date Picker
 - [ ] Time Picker
 
 ### Navigation
@@ -62,7 +64,7 @@ The idea of this project is to provide in a semantic way some useful components 
 - [ ] Image View
 - [ ] Video Player
 - [ ] Audio Player
-- [ ] Carrousel
+- [ ] Carousel
 - [ ] Avatar
 
 ### Social

@@ -10,9 +10,9 @@ $button-border-radius: 4px;
 $button-min-width: 64px;
 $button-height: 36px;
 $button-disabled-color: rgba(0, 0, 0, 0.37);
-$button-opacity-hover: 0.6;
+$button-opacity-hover: 0.7;
 $button-opacity-active: 0.9;
-$button-disabled-opacity: 0.4;
+$button-disabled-opacity: 0.55;
 $button-margin: 0 10px;
 
 .mm-button {
@@ -58,7 +58,7 @@ $button-margin: 0 10px;
   padding: 0 15px 0 15px;
   border-width: 1px;
   &:hover {
-    opacity: 0.75;
+    opacity: $button-opacity-hover;
   }
   &.mm-button-color--success {
     border-color: $success-color-darken-2;
@@ -76,7 +76,7 @@ $button-margin: 0 10px;
   padding: 0 15px 0 15px;
   border-width: 1px;
   &:hover {
-    opacity: 0.75;
+    opacity: $button-opacity-hover;
   }
   &.mm-button-color--success {
     background-color: $success-color-darken-2;

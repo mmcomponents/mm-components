@@ -5,7 +5,7 @@ const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source => readdirSync(source)
   .map(name => join(source, name)).filter(isDirectory);
 
-const BASE_DIR = join(__dirname, 'modules/components');
+const BASE_DIR = join(__dirname, 'modules', 'components');
 
 const componentsDirectories = getDirectories(BASE_DIR);
 
