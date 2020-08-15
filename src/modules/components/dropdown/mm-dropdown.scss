@@ -1,6 +1,11 @@
 @import "../../core/styles/variables/colors";
 @import "../../core/styles/variables/tokens";
 
+.mm-dropdown__container {
+  display: inline-block;
+  width: 100%;
+}
+
 .mm-dropdown__trigger-button {
   background-color: $white-color;
   font-size: $font-size-token;
@@ -13,12 +18,20 @@
   box-sizing: border-box;
   text-align: left;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .mm-dropdown__trigger-button:active,
 .mm-dropdown__trigger-button:focus,
 .mm-dropdown__trigger-button:target {
   outline: none;
+}
+
+.mm-dropdown-options__container {
+  position: relative;
+  width: 100%;
 }
 
 .mm-dropdown-options {

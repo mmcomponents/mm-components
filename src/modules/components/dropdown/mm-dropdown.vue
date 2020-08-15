@@ -2,12 +2,14 @@
   <div class="mm-dropdown__container" v-on-click-outside="closeOptions">
     <mm-label> {{ label}} </mm-label>
     <div class="mm-dropdown">
-      <mm-icon icon="chevron-down"/>
       <button class="mm-dropdown__trigger-button" @click="toggleOptions()">
         <span>{{ dropdownLabelValue }}</span>
+        <mm-icon :icon="icon" />
       </button>
-      <div class="mm-dropdown-options" v-show="showOptions">
-        <slot></slot>
+      <div class="mm-dropdown-options__container">
+        <div class="mm-dropdown-options" v-show="showOptions">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -56,6 +58,9 @@ export default {
         return this.dropdownTriggerLabel;
       }
       return this.selectedOptionLabel || this.placeholder;
+    },
+    icon() {
+      return this.showOptions ? 'expand_less' : 'expand_more';
     },
   },
   methods: {

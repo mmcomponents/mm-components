@@ -1,9 +1,13 @@
 ```vue
 <template>
   <div class="wrapper">
-    <mm-dropdown label="My dropdown">
-      <mm-dropdown-option v-for="option in options" :key="option.value" :option="option" />
-    </mm-dropdown>
+    <mm-row>
+      <mm-col>
+        <mm-dropdown label="My dropdown">
+          <mm-dropdown-option v-for="option in options" :key="option.value" :option="option" />
+        </mm-dropdown>
+      </mm-col>
+    </mm-row>
   </div>
 </template>
 
