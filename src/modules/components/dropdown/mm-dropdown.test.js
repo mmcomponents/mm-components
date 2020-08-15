@@ -38,14 +38,14 @@ describe('MmDropdown', () => {
     const wrapper = mountComponent();
     const icon = wrapper.find(MmIcon);
     expect(icon.exists()).toEqual(true);
-    expect(icon.text()).toEqual('chevron-down');
+    expect(icon.text()).toEqual('expand_more');
   });
 
   it('should render dropdown trigger button', () => {
     const wrapper = mountComponent();
     const triggerButton = wrapper.find('.mm-dropdown__trigger-button');
     expect(triggerButton.exists()).toEqual(true);
-    expect(triggerButton.text()).toEqual(wrapper.vm.dropdownLabelValue);
+    expect(triggerButton.text()).toContain('Selecione um item');
   });
 
   it('should dropdown trigger value be equal dropdown trigger label when it is provided', () => {

@@ -98,7 +98,6 @@ The idea of this project is to provide in a semantic way some useful components 
 - [x] Icon
 - [ ] Card
 - [ ] Tooltip
-- [ ] Card
 - [ ] Dropdown
 - [ ] Empty state
 - [ ] Quote
