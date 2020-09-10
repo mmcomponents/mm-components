@@ -31,7 +31,7 @@ const getDefaultTemplateMock = () => `<mm-form :on-submit="onSubmit">
 
 function getInputByFieldLabel(wrapper, label) {
   return wrapper.findAll(MmField)
-    .filter(w => w.props('label') === label)
+    .filter((w) => w.props('label') === label)
     .at(0)
     .find(MmInput);
 }

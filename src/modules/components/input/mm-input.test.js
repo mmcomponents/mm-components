@@ -4,7 +4,7 @@ import MmField from '../field/mm-field.vue';
 
 const getLabelMock = () => 'First Name';
 const getCustomValidationsMock = () => [
-  { validate: value => value === 'correct', errorMessage: 'Invalid value' },
+  { validate: (value) => value === 'correct', errorMessage: 'Invalid value' },
 ];
 const getRequiredMock = () => false;
 const getPlaceholderMock = () => 'my placeholder';
