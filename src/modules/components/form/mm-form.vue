@@ -68,3 +68,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.mm-form {
+  width: 100%;
+}
+</style>
