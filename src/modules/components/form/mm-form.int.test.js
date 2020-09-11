@@ -30,10 +30,10 @@ const getDefaultTemplateMock = () => `<mm-form :on-submit="onSubmit">
 `;
 
 function getInputByFieldLabel(wrapper, label) {
-  return wrapper.findAll(MmField)
-    .filter(w => w.props('label') === label)
+  return wrapper.findAllComponents(MmField)
+    .filter((w) => w.props('label') === label)
     .at(0)
-    .find(MmInput);
+    .findComponent(MmInput);
 }
 
 function mountDefaultTemplate() {
@@ -67,12 +67,12 @@ describe('mm-form::integration', () => {
     lastName.setValue('mock last name');
 
     await wrapper.vm.$nextTick();
-    const submitButton = wrapper.find(MmSubmitButton);
+    const submitButton = wrapper.findComponent(MmSubmitButton);
     submitButton.trigger('submit');
 
     await wrapper.vm.$nextTick();
 
-    const form = wrapper.find(MmForm);
+    const form = wrapper.findComponent(MmForm);
     expect(form.props().onSubmit).toHaveBeenCalledTimes(1);
   });
 });

@@ -58,11 +58,15 @@ describe('mm-form', () => {
     expect(form.exists()).toBe(true);
   });
 
-  it('should not call onSubmit if form has some invalid field', () => {
+  it('should not call onSubmit if form has some invalid field', async () => {
     const wrapper = mountComponent();
+
     registerAnInvalidFieldOnWrapper(wrapper);
+    await wrapper.vm.$nextTick();
     const form = wrapper.find('form');
     form.trigger('submit');
+    await wrapper.vm.$nextTick();
+
     expect(onSubmitMock).not.toHaveBeenCalled();
   });
 

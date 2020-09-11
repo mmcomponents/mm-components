@@ -11,7 +11,6 @@ const formatDate = (
   } = BRAZILIAN_FORMAT,
 ) => date.toLocaleDateString(locale, options);
 
-
 const getDateFromBrazilianDateString = (brazilianDateString) => {
   const americanDateString = brazilianDateString.split('/').reverse().join('-');
   return new Date(`${americanDateString} 00:00:00`);
