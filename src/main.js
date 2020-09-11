@@ -12,6 +12,8 @@ import MmInput from './modules/components/input';
 import MmLabel from './modules/components/label';
 import MmLoader from './modules/components/loader';
 import MmRow from './modules/components/row';
+import MmOption from './modules/components/option';
+import MmSelect from './modules/components/select';
 import MmSubmitButton from './modules/components/submit-button';
 
 export default {
@@ -30,4 +32,6 @@ export default {
   MmLoader,
   MmRow,
   MmSubmitButton,
+  MmOption,
+  MmSelect,
 };
