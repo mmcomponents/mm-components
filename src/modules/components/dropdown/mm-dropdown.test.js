@@ -23,20 +23,20 @@ function mountComponent(propsData) {
 describe('MmDropdown', () => {
   it('should render dropdown container', () => {
     const wrapper = mountComponent();
-    const dropdown = wrapper.find(MmDropdown);
+    const dropdown = wrapper.findComponent(MmDropdown);
     expect(dropdown.classes()).toContain('mm-dropdown__container');
   });
 
   it('should render dropdown label', () => {
     const wrapper = mountComponent();
-    const label = wrapper.find(MmLabel);
+    const label = wrapper.findComponent(MmLabel);
     expect(label.exists()).toEqual(true);
     expect(label.text()).toEqual(getLabelMock());
   });
 
   it('should render dropdown icon', () => {
     const wrapper = mountComponent();
-    const icon = wrapper.find(MmIcon);
+    const icon = wrapper.findComponent(MmIcon);
     expect(icon.exists()).toEqual(true);
     expect(icon.text()).toEqual('expand_more');
   });

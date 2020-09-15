@@ -61,7 +61,7 @@ describe('mm-fetch-content', () => {
     const { promise: onFetch } = mockPromise;
     const wrapper = mountComponent({ onFetch });
     await wrapper.vm.$nextTick();
-    const loader = wrapper.find(MmLoader);
+    const loader = wrapper.findComponent(MmLoader);
 
     expect(loader.exists()).toBe(true);
 

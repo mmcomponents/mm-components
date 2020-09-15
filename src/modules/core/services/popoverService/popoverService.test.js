@@ -16,7 +16,6 @@ const getPopoverWrapperInstanceMock = () => ({
   },
 });
 
-
 describe('popoverService', () => {
   beforeEach(() => {
     PopoverWrapper.mockClear();

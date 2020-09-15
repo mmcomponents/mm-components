@@ -1,14 +1,14 @@
 <template>
-  <input
-    :value="value"
-    class="mm-input"
-    v-bind="$attrs"
-    v-on="listeners">
+  <select
+    class="mm-select"
+    v-on="listeners" v-bind="$attrs" :multiple="multiple" :value="value">
+    <slot></slot>
+  </select>
 </template>
 
 <script>
 export default {
-  name: 'mm-input',
+  name: 'mm-select',
   inject: {
     fieldVm: {
       default: null,
@@ -20,8 +20,12 @@ export default {
       default: () => [],
     },
     value: {
-      type: String,
+      type: [String, Boolean, Number, Object, Array],
       default: null,
+    },
+    multiple: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -84,6 +88,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./mm-input";
+<style scoped>
+@import "./mm-select.scss";
 </style>

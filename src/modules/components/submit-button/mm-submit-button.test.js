@@ -77,7 +77,7 @@ describe('mm-submit-button', () => {
     const wrapper = mountComponent({
       formVm: getFormVmMock({ isValid: true, isSubmitting: true }),
     });
-    const loader = wrapper.find(MmLoader);
+    const loader = wrapper.findComponent(MmLoader);
     expect(loader.exists()).toBe(true);
   });
 });

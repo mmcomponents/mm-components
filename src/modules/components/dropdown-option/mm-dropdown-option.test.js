@@ -33,16 +33,19 @@ describe('MmDropdownOption', () => {
     expect(wrapper.text()).toEqual(getOptionContentMock());
   });
 
-  it('should render divider only with option has with-distinction property', () => {
+  it('should render divider only with option has with-distinction property', async () => {
     const wrapper = mountComponent({ option: getOptionMock() });
-    expect(wrapper.find(MmDivider).exists()).toEqual(false);
+    expect(wrapper.findComponent(MmDivider).exists()).toEqual(false);
+
     wrapper.setProps({
       option: {
         ...getOptionMock(),
         withDistinction: true,
       },
     });
-    expect(wrapper.find(MmDivider).exists()).toEqual(true);
+
+    await wrapper.vm.$nextTick();
+    expect(wrapper.findComponent(MmDivider).exists()).toEqual(true);
   });
 
   it('should call on select callback when click on option', () => {

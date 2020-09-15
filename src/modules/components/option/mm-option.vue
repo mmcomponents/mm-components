@@ -1,27 +1,27 @@
 <template>
-  <input
+  <option class="mm-option"
     :value="value"
-    class="mm-input"
-    v-bind="$attrs"
-    v-on="listeners">
+    :selected="selected"
+    :disabled="disabled">
+    <slot></slot>
+  </option>
 </template>
 
 <script>
 export default {
-  name: 'mm-input',
-  inject: {
-    fieldVm: {
-      default: null,
-    },
-  },
+  name: 'mm-option',
   props: {
-    customValidations: {
-      type: Array,
-      default: () => [],
-    },
     value: {
-      type: String,
+      type: [String, Boolean, Number, Object, Array],
       default: null,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    selected: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -84,6 +84,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "./mm-input";
+<style scoped>
+@import "./mm-option.scss";
 </style>

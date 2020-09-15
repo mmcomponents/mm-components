@@ -35,7 +35,7 @@ export default {
   computed: {
     isFormValid() {
       if (this.fields.length > 0) {
-        return this.fields.every(fieldVm => fieldVm.isValid);
+        return this.fields.every((fieldVm) => fieldVm.isValid);
       }
       return true;
     },
@@ -68,3 +68,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.mm-form {
+  width: 100%;
+}
+</style>

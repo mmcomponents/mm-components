@@ -78,7 +78,7 @@ describe('mm-button', () => {
     const wrapper = mountComponent({
       icon: 'send',
     });
-    const icon = wrapper.find(MmIcon);
+    const icon = wrapper.findComponent(MmIcon);
     expect(icon.text()).toBe('send');
   });
 });

@@ -67,15 +67,17 @@ describe('DateInput', () => {
     );
   });
 
-  it('should emit an input event when input receives an input event', () => {
+  it('should emit an input event when input receives an input event', async () => {
     const wrapper = mountComponent();
     const input = wrapper.find('input');
     const getNewInputValueMock = () => 'new input value mock';
-    jest.spyOn(wrapper.vm, '$emit');
+
     input.element.value = getNewInputValueMock();
     input.trigger('input');
-    expect(wrapper.vm.$emit).toHaveBeenCalledTimes(1);
-    expect(wrapper.vm.$emit).toHaveBeenCalledWith('input', getNewInputValueMock());
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.emitted().input.length).toBe(1);
+    expect(wrapper.emitted().input).toEqual([[getNewInputValueMock()]]);
   });
 
   it('should destroy datepicker instance before component destroy', () => {
@@ -85,11 +87,14 @@ describe('DateInput', () => {
     expect(destroyDatepicker).toHaveBeenCalledWith(wrapper.vm.datepickerInstance);
   });
 
-  it('should update datepicker min date when component min date property update', () => {
+  it('should update datepicker min date when component min date property update', async () => {
     const wrapper = mountComponent();
+
     wrapper.setProps({
       minDate: getMinDateMock(),
     });
+    await wrapper.vm.$nextTick();
+
     expect(updateOption).toHaveBeenCalledTimes(1);
     expect(updateOption).toHaveBeenCalledWith(wrapper.vm.datepickerInstance, {
       optionName: 'minDate',
@@ -97,11 +102,14 @@ describe('DateInput', () => {
     });
   });
 
-  it('should update datepicker max date when component max date property update', () => {
+  it('should update datepicker max date when component max date property update', async () => {
     const wrapper = mountComponent();
+
     wrapper.setProps({
       maxDate: getMaxDateMock(),
     });
+    await wrapper.vm.$nextTick();
+
     expect(updateOption).toHaveBeenCalledTimes(1);
     expect(updateOption).toHaveBeenCalledWith(wrapper.vm.datepickerInstance, {
       optionName: 'maxDate',
