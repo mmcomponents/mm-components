@@ -18,14 +18,10 @@ jobs:
       - run: npm run test
       - run: git fetch origin
       - run: git checkout master
-      - run: git config --global user.email "marcusmmourao@gmail.com"
-      - run: git config --global user.name "Marcus Mourão"
       - run: npm run release
         env:
           GITHUB_TOKEN: ${{secrets.release_action_token}}
       - run: npm run build
-        env:
-          GITHUB_TOKEN: ${{secrets.release_action_token}}
 
   publish-npm:
     needs: build
