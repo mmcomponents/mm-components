@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -19,8 +21,6 @@ jobs:
       - run: git fetch origin
       - run: git checkout master
       - run: npm run release
-        env:
-          GITHUB_TOKEN: ${{secrets.release_action_token}}
       - run: npm run build
 
   publish-npm:
