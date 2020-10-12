@@ -35,7 +35,7 @@ export default {
     inputValidations() {
       const validations = [...this.customValidations];
       if (this.fieldVm && this.fieldVm.isRequired) {
-        const requiredValidation = { validate: value => !!value, errorMessage: 'Este campo é obrigatório.' };
+        const requiredValidation = { validate: (value) => !!value, errorMessage: 'Este campo é obrigatório.' };
         validations.unshift(requiredValidation);
       }
       return validations;
@@ -75,7 +75,7 @@ export default {
     },
     isValueValid(value) {
       return this.inputValidations
-        .every(validationRule => validationRule.validate(value));
+        .every((validationRule) => validationRule.validate(value));
     },
     getErrorMessage() {
       return this.inputValidations[0].errorMessage;

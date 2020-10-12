@@ -1,6 +1,6 @@
 <template>
   <div class="mm-field" :class="classes">
-    <label>{{ label }}</label>
+    <mm-label>{{ label }}</mm-label>
     <slot></slot>
     <div class="mm-field__error-message-container">
       <span v-if="showInvalidFeedback" class="mm-field__error-message">
@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import MmLabel from '../label';
+
 export default {
   name: 'mm-field',
+  components: { MmLabel },
   props: {
     label: {
       type: String,

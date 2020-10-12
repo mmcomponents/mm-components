@@ -27,7 +27,9 @@ describe('mm-field', () => {
 
   it('should register field on create', () => {
     const wrapper = mountComponent();
-    const field = wrapper.find(MmField);
+
+    const field = wrapper.findComponent(MmField);
+
     expect(registerFieldMock).toHaveBeenCalledTimes(1);
     expect(registerFieldMock).toHaveBeenCalledWith(field.vm.$data);
   });
@@ -48,22 +50,28 @@ describe('mm-field', () => {
     expect(label.text()).toBe(getLabelMock());
   });
 
-  it('should add invalid style when enable validation and set field invalid', () => {
+  it('should add invalid style when enable validation and set field invalid', async () => {
     const wrapper = mountComponent();
+
     wrapper.setData({
       isValidationFeedbackEnabled: true,
       isValid: false,
     });
+
+    await wrapper.vm.$nextTick();
     expect(wrapper.classes()).toContain('mm-field--invalid');
   });
 
-  it('should show error message when enable validation and set field invalid', () => {
+  it('should show error message when enable validation and set field invalid', async () => {
     const wrapper = mountComponent();
+
     wrapper.setData({
       errorMessage: 'Invalid field',
       isValidationFeedbackEnabled: true,
       isValid: false,
     });
+    await wrapper.vm.$nextTick();
+
     const errorMessage = wrapper.find('span.mm-field__error-message');
     expect(errorMessage.text()).toBe('Invalid field');
   });

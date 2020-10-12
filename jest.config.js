@@ -15,6 +15,9 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@components/(.*)$': '<rootDir>/src/modules/components/$1',
+    '^@core/(.*)$': '<rootDir>/src/modules/core/$1',
+    '^@directives/(.*)$': '<rootDir>/src/modules/directives/$1',
   },
   snapshotSerializers: [
     'jest-serializer-vue',

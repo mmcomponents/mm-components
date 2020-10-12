@@ -1,0 +1,25 @@
+@import "../../core/styles/variables/colors";
+@import "../../core/styles/variables/tokens";
+
+.mm-dropdown-option button {
+  background-color: $white-color;
+  font-size: $font-size-token;
+  border: none;
+  color: $black-color;
+  padding: $padding-token;
+  min-height: 38px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+.mm-dropdown-option button:hover {
+  background-color: $danger-color-lighten-3;
+}
+
+.mm-dropdown-option button:active,
+.mm-dropdown-option button:focus,
+.mm-dropdown-option button:target {
+  outline: none;
+}

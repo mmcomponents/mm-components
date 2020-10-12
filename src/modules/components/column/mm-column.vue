@@ -43,6 +43,13 @@ export default {
       type: [String, Number],
       default: 0,
     },
+    align: {
+      type: String,
+      default: null,
+      validator(value) {
+        return ['center', 'right'].includes(value);
+      },
+    },
   },
   render(createElement, { props, children, data }) {
     return createElement('div', {
@@ -58,6 +65,7 @@ export default {
         [`mm-col--offset-md-${props.offsetMd}`]: props.offsetMd,
         [`mm-col--offset-lg-${props.offsetLg}`]: props.offsetLg,
         [`mm-col--offset-xl-${props.offsetXl}`]: props.offsetXl,
+        [`mm-col--align-${props.align}`]: props.align,
       },
       ...data,
     }, children);

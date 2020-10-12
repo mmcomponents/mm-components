@@ -4,7 +4,7 @@ import MmField from '../field/mm-field.vue';
 
 const getLabelMock = () => 'First Name';
 const getCustomValidationsMock = () => [
-  { validate: value => value === 'correct', errorMessage: 'Invalid value' },
+  { validate: (value) => value === 'correct', errorMessage: 'Invalid value' },
 ];
 const getRequiredMock = () => false;
 const getPlaceholderMock = () => 'my placeholder';
@@ -58,8 +58,7 @@ function mountTemplate(props) {
         formVm: { registerField: jest.fn() },
       };
     },
-  },
-  { attachToDocument: true });
+  });
 }
 
 describe('mm-input', () => {
@@ -71,7 +70,7 @@ describe('mm-input', () => {
 
   it('should render an input with placeholder', () => {
     const wrapper = mountComponent({ placeholder: getPlaceholderMock() });
-    const input = wrapper.find(MmInput);
+    const input = wrapper.findComponent(MmInput);
     expect(input.attributes().placeholder).toBe(getPlaceholderMock());
     wrapper.destroy();
   });
@@ -79,7 +78,7 @@ describe('mm-input', () => {
   it('should emit an input event with input value on input', async () => {
     const wrapper = mountTemplate();
     await wrapper.vm.$nextTick();
-    const inputWrapper = wrapper.find(MmInput);
+    const inputWrapper = wrapper.findComponent(MmInput);
     jest.spyOn(inputWrapper.vm, '$emit');
     const input = wrapper.find('input');
     input.setValue('mock input value');
@@ -92,7 +91,7 @@ describe('mm-input', () => {
   it('should validate value on init', async () => {
     const wrapper = mountTemplate({ value: 'my-value', customValidations: getCustomValidationsMock() });
     await wrapper.vm.$nextTick();
-    const field = wrapper.find(MmField);
+    const field = wrapper.findComponent(MmField);
     expect(field.vm.isValid).toBe(false);
     wrapper.destroy();
   });
