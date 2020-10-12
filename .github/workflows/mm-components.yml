@@ -18,11 +18,6 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run test
-      - run: git fetch origin
-      - run: git config --local user.email "action@github.com"
-      - run: git config --local user.name "GitHub Action"
-      - run: git checkout master
-      - run: npm run release
       - run: npm run build
 
   publish-npm:
