@@ -18,6 +18,7 @@
     "test": "NODE_ICU_DATA=node_modules/full-icu vue-cli-service test:unit",
     "styleguide": "vue-styleguidist server",
     "styleguide:build": "vue-styleguidist build",
+    "release-action": "./release.sh",
     "release": "release-it --ci",
     "release:preview": "release-it --ci --dry-run"
   },

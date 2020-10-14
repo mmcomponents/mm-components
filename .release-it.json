@@ -2,9 +2,9 @@
   "git": {
     "push": true,
     "requireCommits": true,
-    "requireCleanWorkingDir": false,
+    "requireCleanWorkingDir": true,
     "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
-    "commitMessage": "chore: release v${version}",
+    "commitMessage": "release: v${version}",
     "pushRepo": "https://github.com/mmcomponents/mm-components.git"
   },
   "github": {
