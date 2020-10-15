@@ -36,6 +36,7 @@
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/format": "^9.1.2",
+    "@release-it/conventional-changelog": "^2.0.0",
     "@vue/cli-plugin-babel": "^4.5.4",
     "@vue/cli-plugin-eslint": "^4.5.4",
     "@vue/cli-plugin-unit-jest": "^4.5.4",

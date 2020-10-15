@@ -7,6 +7,12 @@
     "commitMessage": "release: v${version}",
     "pushRepo": "https://github.com/mmcomponents/mm-components.git"
   },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  },
   "github": {
     "release": true
   },
