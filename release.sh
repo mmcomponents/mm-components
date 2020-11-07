@@ -12,7 +12,7 @@ then
     npm run test
     npm run release
     npm run build
-    npm run publish
+    npm publish
     echo "Finished release with success."
 else
     echo "Skipping release flow."
